@@ -1,54 +1,46 @@
 body {
   all: unset;
-  background-color: #1a1a1aff;
-  color: rgb(164, 164, 164);
+  background-color: rgb(26, 26, 26);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.flexWrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-}
-.section {
-  min-height: 20svh;
-}
-#main {
-  min-width: 90%;
 }
 .hero {
   z-index: -1;
   position: relative;
 }
 #heroWaveImg {
-  width: 100%;
   padding-top: 30svh;
   vertical-align: middle;
   position: absolute;
   background-color: rgb(125, 125, 125);
+  width: 100%;
 }
 .grid {
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  gap: 10px;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2rem;
   grid-template-areas:
-    "area1 area1 area2 area2 area3 area3"
-    "area1 area1 area2 area2 area3 area3"
-    "area4 area4 area5 area5 area6 area6"
-    "area4 area4 area5 area5 area6 area6"
-    "area7 area7 area8 area8 area9 area9"
-    "area7 area7 area8 area8 area9 area9";
+    "area1 area1 area2 area2 area3 area4"
+    "area1 area1 area7 area7 area3 area4"
+    "area5 area6 area7 area7 area9 area9"
+    "area8 area8 area8 area8 area9 area9";
 }
 .grid > div {
-  background-color: bisque;
+  backdrop-filter: blur(2px);
+  background: rgba(245, 245, 245, 0.51);
+  border-radius: 10px;
+  box-shadow: 2px 4px 20px rgb(65, 65, 65);
+  -webkit-backdrop-filter: blur(2px);
+  min-height: 150px;
+  padding: 10px;
 }
-.glass {
-  width: inherit;
-  height: 90svh;
-  background-color: aliceblue;
-  border-radius: 20px 50px 100px 200px;
-  margin-bottom: 10svh;
+
+.grid > div:hover {
+  transition-duration: 0.2s;
+  background: rgba(245, 245, 245, 0.849);
+  box-shadow: 2px 4px 40px rgb(130, 130, 130);
+}
+
+#main {
+  padding: 50px;
 }
