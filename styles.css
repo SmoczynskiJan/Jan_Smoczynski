@@ -1,10 +1,16 @@
 body {
   margin: 0;
-  background-color: red;
+  background-color: #ababab;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   position: relative;
 }
 .grid {
+  background: linear-gradient(
+    #ababab 0%,
+    #ababab 65%,
+    #1f1f1f 65%,
+    #1f1f1f 100%
+  );
   padding: 50px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -21,23 +27,18 @@ body {
   background: rgba(245, 245, 245, 0.51);
   border-radius: 10px;
   box-shadow: 2px 4px 20px rgb(65, 65, 65);
-  -webkit-backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(4px);
   padding: 10px;
 }
 
 #waveSVG {
-  top: 50%;
-  transform: rotate(180deg);
+  top: 20%;
   position: absolute;
 }
 
 .grid > div:hover {
+  backdrop-filter: blur(5px);
   transition-duration: 0.2s;
-  background: rgba(245, 245, 245, 0.849);
-  box-shadow: 2px 4px 40px rgb(130, 130, 130);
-}
-
-#main {
-  padding: 50px;
-  background-color: brown;
+  background: rgba(245, 245, 245, 0.7);
+  box-shadow: 2px 4px 40px rgb(0, 172, 124);
 }
