@@ -68,12 +68,12 @@ body {
   aspect-ratio: 1/1;
 }
 #buttonNext {
-  right: 0;
+  right: 1%;
   top: 50%;
   transform: translateY(-50%);
 }
 #buttonPrevious {
-  left: 0;
+  left: 1%;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -90,7 +90,28 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.hobby > * {
+  width: 50%;
+}
+#area9 > :not(div:first-of-type) {
+  visibility: hidden;
+}
+
+.hobby > img {
+  height: 100%;
+  border-radius: 0px 20px 20px 0px;
+  object-fit: cover;
+}
+.hobbyText > h1 {
+  margin: 3vh 3vh 0 3vh;
+}
+.hobbyText > p {
+  text-align: start;
+  padding: 0 3vh 3vh 3vh;
 }
 /*every media lower than pc*/
 @media (max-width: 1280px) {

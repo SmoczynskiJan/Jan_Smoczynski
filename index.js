@@ -10,7 +10,13 @@ const deviceType = deviceFlag(); // Get the device type
 const gridElem = document.querySelector(".grid"); // Select the grid element
 const windowHeight = window.innerHeight; // Get the height of the window in pixels
 const gridHeight = windowHeight; // height minus padding`
+const hobbyElemAll = document.querySelectorAll(".hobby"); // Select all elements with the class "hobby"
 
+
+
+function setIndexZ(elem, index) {
+    elem.style.zIndex = index; // Set the z-index of the element to 0
+}
 
 
 if(deviceType === "mobile"){
