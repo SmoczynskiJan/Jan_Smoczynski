@@ -12,11 +12,37 @@ const windowHeight = window.innerHeight; // Get the height of the window in pixe
 const gridHeight = windowHeight; // height minus padding`
 const hobbyElemAll = document.querySelectorAll(".hobby"); // Select all elements with the class "hobby"
 
+hobbyElemAll.forEach((elem, index) => {elem.style.zIndex = index;
 
-
-function setIndexZ(elem, index) {
-    elem.style.zIndex = index; // Set the z-index of the element to 0
+}); // Set the z-index of each hobby element to its index in the NodeList
+function ChangeHobbyZindex (){
+    hobbyElemAll.forEach((elem,index)=>{
+        elem.style.zIndex++;
+        elem.style.zIndex=elem.style.zIndex % hobbyElemAll.length
+        })
 }
+
+
+
+// hobbyButtonAll.forEach((button) => {
+//     button.addEventListener("click", (event) => {
+//         const elemClass = event.target.classList[0]; // Get the class of the clicked button
+//         ChangeHobbyZindex(elemClass); // Call the function to change the z-index of the hobby elements
+// })})
+
+// ; // Set the z-index of each hobby element to its index in the NodeList
+// function ChangeHobbyZindex(elemClass) {
+//     hobbyElemAll.forEach((elem, index) => {
+//         // Convert current zIndex to a number (default to 0 if unset or invalid)
+//         let currentZ = parseInt(elem.style.zIndex) || 0;
+//         let newZ = '';
+//         if(elemClass=='buttonNext'){
+//         newZ = (currentZ + 1) % hobbyElemAll.length;}else{newZ=(currentZ - 1 + hobbyElemAll.length) % hobbyElemAll.length;
+//         }elem.style.zIndex = newZ;
+//     });
+//     console.log("zIndex changed");
+// }
+
 
 
 if(deviceType === "mobile"){

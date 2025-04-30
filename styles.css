@@ -97,9 +97,6 @@ body {
 .hobby > * {
   width: 50%;
 }
-#area9 > :not(div:first-of-type) {
-  visibility: hidden;
-}
 
 .hobby > img {
   height: 100%;
