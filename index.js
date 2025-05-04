@@ -15,33 +15,36 @@ const hobbyElemAll = document.querySelectorAll(".hobby"); // Select all elements
 hobbyElemAll.forEach((elem, index) => {elem.style.zIndex = index;
 
 }); // Set the z-index of each hobby element to its index in the NodeList
-function ChangeHobbyZindex (){
-    hobbyElemAll.forEach((elem,index)=>{
-        elem.style.zIndex++;
-        elem.style.zIndex=elem.style.zIndex % hobbyElemAll.length
+function ChangeHobbyZindex (elemClass){
+
+    hobbyElemAll.forEach((elem) => {console.log(`zIndex ${elem.style.zIndex}`)}); // Log the z-index of each hobby element to the console
+    if(elemClass==='buttonNext'){
+        hobbyElemAll.forEach((elem)=>{
+            let elemZ = parseInt(elem.style.zIndex); // Get the current z-index of the element
+            elemZ++;
+            elem.style.zIndex=elemZ % hobbyElemAll.length;
+            showZIndex0(elem); // Call the function to show/hide the element based on its z-index
         })
+    }else if(elemClass==='buttonPrevious'){
+        hobbyElemAll.forEach((elem)=>{
+            let elemZ = parseInt(elem.style.zIndex);
+            elemZ--;
+            elem.style.zIndex=(elemZ + hobbyElemAll.length) % hobbyElemAll.length;
+            showZIndex0(elem); // Call the function to show/hide the element based on its z-index
+        })
+    }else{
+        hobbyElemAll.forEach((elem)=>{
+            showZIndex0(elem); // Call the function to show/hide the element based on its z-index
+        })
+    }
+}
+function showZIndex0(elem){
+    elem.style.zIndex != '0'?elem.style.visibility='hidden':elem.style.visibility='visible'; // Set the z-index of each hobby element to its index in the NodeList
+
 }
 
+ChangeHobbyZindex(); // Call the function to change the z-index of the hobby elements
 
-
-// hobbyButtonAll.forEach((button) => {
-//     button.addEventListener("click", (event) => {
-//         const elemClass = event.target.classList[0]; // Get the class of the clicked button
-//         ChangeHobbyZindex(elemClass); // Call the function to change the z-index of the hobby elements
-// })})
-
-// ; // Set the z-index of each hobby element to its index in the NodeList
-// function ChangeHobbyZindex(elemClass) {
-//     hobbyElemAll.forEach((elem, index) => {
-//         // Convert current zIndex to a number (default to 0 if unset or invalid)
-//         let currentZ = parseInt(elem.style.zIndex) || 0;
-//         let newZ = '';
-//         if(elemClass=='buttonNext'){
-//         newZ = (currentZ + 1) % hobbyElemAll.length;}else{newZ=(currentZ - 1 + hobbyElemAll.length) % hobbyElemAll.length;
-//         }elem.style.zIndex = newZ;
-//     });
-//     console.log("zIndex changed");
-// }
 
 
 
